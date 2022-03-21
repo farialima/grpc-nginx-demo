@@ -1,0 +1,11 @@
+version: '3.2'
+services:
+  grpc-server:
+    build: .
+    ports:
+      - 10001:50051 
+  nginx:
+    build: ./nginx
+    ports:
+      - 50021:50021
+      #- 443:443
