@@ -7,9 +7,13 @@ services:
     command: python route_guide_server.py
   nginx:
     build: ./nginx
+    volumes:
+      - type: bind
+        source: ./../letsencrypt/etc
+        target: /etc/letsencrypt
     ports:
       - 80:80
-      #- 443:443
+      - 443:443
   grpc-client:
     build: .
     command: bash -c 'sleep 3 && python route_guide_client.py'
