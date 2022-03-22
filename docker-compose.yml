@@ -8,7 +8,7 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 50021:50021
+      - 80:80
       #- 443:443
   grpc-client:
     build: .
